@@ -1,0 +1,12 @@
+<a class="{% if page.url == '/' %}active{% endif %} item" href="/{{ site.baseurl }}">Home</a>
+
+{% for my_page in site.pages %}
+  {% if my_page.title %}
+  <a class="{% if page == my_page %}active{% endif %} item" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+  {% endif %}
+{% endfor %}
+
+<div class="right menu">
+  <a class="item" href="https://plus.google.com/+MichaelSpencer"><i class="google plus icon"></i></a>
+  <a class="item" href="mailto:sonrisesoftware@gmail.com"><i class="mail icon"></i></a>
+</div>

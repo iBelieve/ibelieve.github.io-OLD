@@ -1,38 +1,45 @@
-<footer class="site-footer">
-
-  <div class="wrapper">
-
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-        </ul>
+<div class="ui inverted vertical footer segment">
+  <div class="ui center aligned container">
+    <div class="ui stackable inverted divided grid">
+      <div class="three wide column">
+        <h4 class="ui inverted header">Group 1</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Link One</a>
+          <a href="#" class="item">Link Two</a>
+          <a href="#" class="item">Link Three</a>
+          <a href="#" class="item">Link Four</a>
+        </div>
       </div>
-
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
+      <div class="three wide column">
+        <h4 class="ui inverted header">Group 2</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Link One</a>
+          <a href="#" class="item">Link Two</a>
+          <a href="#" class="item">Link Three</a>
+          <a href="#" class="item">Link Four</a>
+        </div>
       </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
+      <div class="three wide column">
+        <h4 class="ui inverted header">Group 3</h4>
+        <div class="ui inverted link list">
+          <a href="#" class="item">Link One</a>
+          <a href="#" class="item">Link Two</a>
+          <a href="#" class="item">Link Three</a>
+          <a href="#" class="item">Link Four</a>
+        </div>
+      </div>
+      <div class="seven wide column">
+        <h4 class="ui inverted header">Footer Header</h4>
+        <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
       </div>
     </div>
-
+    <div class="ui inverted section divider"></div>
+    <img src="assets/images/logo.png" class="ui centered mini image">
+    <div class="ui horizontal inverted small divided link list">
+      <a class="item" href="#">Site Map</a>
+      <a class="item" href="#">Contact Us</a>
+      <a class="item" href="#">Terms and Conditions</a>
+      <a class="item" href="#">Privacy Policy</a>
+    </div>
   </div>
-
-</footer>
+</div>

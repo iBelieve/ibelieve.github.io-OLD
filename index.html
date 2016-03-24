@@ -1,23 +1,34 @@
 ---
-layout: default
+layout: home
 ---
 
-<div class="home">
+<div class="ui main text container">
+  <h1 class="ui header">Posts</h1>
 
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
+  <div class="ui divided link items">
     {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+    <div class="item">
+      <div class="content">
+        <div class="header">{{ post.title }}</div>
+        <div class="meta">
+          <span class="date">
+            {{ post.date | date: "%b %-d, %Y" }}
+          </span>
+        </div>
+        <div class="description">
+          <p>{{ post.summary }}</p>
+        </div>
+        <div class="extra">
+          <i class="comment icon"></i>
+          20 comments
+        </div>
+      </div>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+  <div class="ui info message">
+    <i class="rss icon"></i>
+    Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>.
+  </div>
 </div>
