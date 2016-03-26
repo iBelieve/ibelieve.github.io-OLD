@@ -1,0 +1,149 @@
+---
+layout: project
+title: "Quickly"
+logo: /images/quickly.png
+tagline: ES6 and Node.js-like environment for QML
+---
+
+<div style="display: flex">
+<div style="margin: auto">
+
+  <a class="ui large primary labeled icon button" href="http://quickly.readthedocs.org">
+     <i class="book icon"></i>
+    Documentation
+  </a>
+  <a class="ui large labeled icon button" href="https://github.com/iBeliever/quickly">
+    <i class="github icon"></i>
+    GitHub
+  </a>
+</div>
+</div>
+
+<div class="ui vertical stripe segment" style="padding-top: 3em">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">Write you logic in Javascript and your UI in QML</h3>
+        <p>Keep your logic and UI cleanly separated. No need to write a C++ backend for your app either.</p>
+        <h3 class="ui header">Use classes, decorators, arrow functions, and more</h3>
+        <p>Quickly uses QMLify and Babel to transpile modern ES6 into Javascript that is compatible with QML.</p>
+      </div>
+      <div class="seven wide right floated column">
+{% highlight js %}
+import {field, Document} from 'sphere'
+
+export class Person extends Document {
+    @field('string') firstName
+    @field('string') lastName
+    @field('string') email
+    @field('date') createdDate
+    @field('bool') notificationsEnabled
+
+    constructor(firstName, lastName, email) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.email = email
+    }
+}
+
+Person.where({ firstName: $startsWith('Mic')}).all()
+{% endhighlight %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a class="ui huge button" href="https://babeljs.io/docs/learn-es2015/">Learn more about ES6</a>
+        <a class="ui huge button" href="http://quickly.readthedocs.org/en/latest/qmlify.html">QMLify Usage</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="seven wide column">
+{% highlight js %}
+import fs from 'fs'
+
+if (!fs.exists('config.json'))
+    throw new Error('File doesn\'t exist!')
+
+const config = JSON.parse(fs.readFile('config.json'))
+
+fs.writeFile('output.log', 'Configuration loaded.')
+{% endhighlight %}
+      </div>
+
+      <div class="eight wide right floated column">
+        <h3 class="ui header">Read from and write to the filesystem without C++</h3>
+        <p>You can use the <code>fs</code> module, as well as <code>path</code>, <code>url</code>, <code>assert</code>, and other core Node.js modules. In addition, many ES6 polyfills are provided.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a class="ui huge button" href="http://quickly.readthedocs.org/en/latest/corejs.html#core-modules">Core modules documentation</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">Use fetch and promises for network access</h3>
+        <p>No need to use <code>XMLHttpRequest</code>. Quickly provides a polyfill for the fetch API and ES6 Promises, which makes network access a breeze.</p>
+      </div>
+      <div class="seven wide right floated column">
+{% highlight js %}
+fetch('https://api.github.com/repos/iBeliever/quickly')
+    .then(response => response.json())
+    .then(json => json.stargazers_count)
+    .then(stars => console.log(`${stars} stars!`))
+{% endhighlight %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <a class="ui huge button" href="http://quickly.readthedocs.org/en/latest/corejs.html#polyfills">Polyfills documentation</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="seven wide column">
+{% highlight js %}
+import _ from 'lodash'
+
+_.assign({ 'a': 1 }, { 'b': 2 }, { 'c': 3 });
+// → { 'a': 1, 'b': 2, 'c': 3 }
+_.map([1, 2, 3], function(n) { return n * 3; });
+// → [3, 6, 9]
+{% endhighlight %}
+      </div>
+
+      <div class="eight wide right floated column">
+        <h3 class="ui header">Use many of the 250,000+ npm packages</h3>
+        <p>Many of the packages available via npm work with Quickly. And if they don't, submit a bug and we can ship a patch with Quickly so the module works for you and everyone else.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment" style="padding-bottom: 0">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="center aligned column">
+        <h3 class="ui header" style="margin-bottom: 1em">What are you waiting for? Get started now!</h3>
+        <a class="ui huge green labeled icon button" href="http://quickly.readthedocs.org/en/latest/tutorial.html">
+           <i class="arrow right icon"></i>
+          Read the Tutorial
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

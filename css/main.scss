@@ -3,88 +3,25 @@
 ---
 @charset "utf-8";
 
-.hidden.menu {
-  display: none;
-}
+// $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+// $base-font-size:   16px;
+// $base-font-weight: 400;
+// $small-font-size:  $base-font-size * 0.875;
+// $base-line-height: 1.5;
 
-.masthead.segment {
-  min-height: 400px;
-  padding: 1em 0em;
-}
-.masthead .logo.item img {
-  margin-right: 1em;
-}
-.masthead .ui.menu .ui.button {
-  margin-left: 0.5em;
-}
-.masthead h1.ui.header {
-  margin-top: 0.5em;
-  margin-bottom: 0em;
-  font-size: 4em;
-  font-weight: normal;
-}
-.masthead h2 {
-  font-size: 1.7em;
-  font-weight: normal;
-}
+$spacing-unit:     30px;
 
-.secondary.pointing.menu .toc.item {
-  display: none;
-}
+$text-color:       rgba(0, 0, 0, 0.87);
+$background-color: #fdfdfd;
+$brand-color:      #2a7ae2;
 
-.ui.footer.segment {
-  margin: 5em 0em 0em;
-  padding: 5em 0em;
-}
+$subtext-color:    rgba(0, 0, 0, 0.54);
+$disabled-color:    rgba(0, 0, 0, 0.38);
+$divider-color:    rgba(0, 0, 0, 0.12);
 
-.main.container {
-  margin-top: 5em;
-}
-
-@media only screen and (max-width: 700px) {
-  .ui.fixed.menu {
-    display: none !important;
-  }
-  .secondary.pointing.menu .item,
-  .secondary.pointing.menu .menu {
-    display: none;
-  }
-  .secondary.pointing.menu .toc.item {
-    display: block;
-  }
-  .masthead.segment {
-    min-height: 350px;
-  }
-  .masthead h1.ui.header {
-    font-size: 2em;
-    margin-top: 1.5em;
-  }
-  .masthead h2 {
-    margin-top: 0.5em;
-    font-size: 1.5em;
-  }
-}
-
-.signature {
-    font-family: "Pacifico", "Open Sans", cursive;
-    font-weight: 300;
-}
-
-.masthead {
-    .signature {
-        font-size: 3em;
-        margin-top: 1.5em;
-    }
-
-    .subheader {
-        margin-bottom: 0px;
-    }
-
-    .tagline {
-        font-style: italic;
-        font-weight: 400;
-        opacity: 0.54;
-        margin-top: 0px;
-        margin-bottom: 32px;
-    }
-}
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;

@@ -22,3 +22,7 @@ markdown: kramdown
 
 # Octopress config
 post_ext: md
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
