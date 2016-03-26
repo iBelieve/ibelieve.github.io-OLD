@@ -16,6 +16,10 @@ tagline: ES6 and Node.js-like environment for QML
     <i class="github icon"></i>
     GitHub
   </a>
+  <a class="ui large teal labeled icon button" href="https://gitter.im/iBeliever/quickly">
+    <i class="comment icon"></i>
+    Gitter Chat
+  </a>
 </div>
 </div>
 
@@ -26,11 +30,13 @@ tagline: ES6 and Node.js-like environment for QML
         <h3 class="ui header">Write you logic in Javascript and your UI in QML</h3>
         <p>Keep your logic and UI cleanly separated. No need to write a C++ backend for your app either.</p>
         <h3 class="ui header">Use classes, decorators, arrow functions, and more</h3>
-        <p>Quickly uses QMLify and Babel to transpile modern ES6 into Javascript that is compatible with QML.</p>
+        <p>Quickly uses QMLify and Babel to transpile modern ES6 into Javascript that is compatible with QML. You can also just use the Quickly library in existing projects without the QMLify transpiler.</p>
       </div>
       <div class="seven wide right floated column">
 {% highlight js %}
-import {field, Document} from 'sphere'
+import {field, register, Document} from 'sphere'
+
+connect('quickly-demo', 'Sample demo of Quickly')
 
 export class Person extends Document {
     @field('string') firstName
@@ -46,7 +52,7 @@ export class Person extends Document {
     }
 }
 
-Person.where({ firstName: $startsWith('Mic')}).all()
+register(Person)
 {% endhighlight %}
       </div>
     </div>
@@ -64,6 +70,39 @@ Person.where({ firstName: $startsWith('Mic')}).all()
     <div class="row">
       <div class="seven wide column">
 {% highlight js %}
+import QtQuick 2.4
+import Quickly 0.1
+import "app.js" as App
+
+Item {
+    Component.onCompleted: {
+        var json = JSON.parse(FileSystem.readFile("person.json"))
+        var person = new Person(json[0], json[1], json[2])
+
+        person.save()
+    }
+}
+{% endhighlight %}
+      </div>
+
+      <div class="eight wide right floated column">
+        <h3 class="ui header">Naturally use your code from QML</h3>
+        <p>The Quickly library and your own QMLified code can be used naturally from QML using standard imports, just as you would with QML singletons or standard QML-style JS libraries. No need for using <code>require()</code>, as other Node.js/CommonJS integrations for QML do. You can also publish your code for other developers to use without them having to use QMLify or Quickly.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">Read from and write to the filesystem without C++</h3>
+        <p>You can use the <code>fs</code> module, as well as <code>path</code>, <code>url</code>, <code>assert</code>, and other core Node.js modules. In addition, many ES6 polyfills are provided.</p>
+      </div>
+
+      <div class="seven wide right floated column">
+{% highlight js %}
 import fs from 'fs'
 
 if (!fs.exists('config.json'))
@@ -73,11 +112,6 @@ const config = JSON.parse(fs.readFile('config.json'))
 
 fs.writeFile('output.log', 'Configuration loaded.')
 {% endhighlight %}
-      </div>
-
-      <div class="eight wide right floated column">
-        <h3 class="ui header">Read from and write to the filesystem without C++</h3>
-        <p>You can use the <code>fs</code> module, as well as <code>path</code>, <code>url</code>, <code>assert</code>, and other core Node.js modules. In addition, many ES6 polyfills are provided.</p>
       </div>
     </div>
     <div class="row">
@@ -91,11 +125,7 @@ fs.writeFile('output.log', 'Configuration loaded.')
 <div class="ui vertical stripe segment">
   <div class="ui middle aligned stackable grid container">
     <div class="row">
-      <div class="eight wide column">
-        <h3 class="ui header">Use fetch and promises for network access</h3>
-        <p>No need to use <code>XMLHttpRequest</code>. Quickly provides a polyfill for the fetch API and ES6 Promises, which makes network access a breeze.</p>
-      </div>
-      <div class="seven wide right floated column">
+      <div class="seven wide column">
 {% highlight js %}
 fetch('https://api.github.com/repos/iBeliever/quickly')
     .then(response => response.json())
@@ -103,6 +133,10 @@ fetch('https://api.github.com/repos/iBeliever/quickly')
     .then(stars => console.log(`${stars} stars!`))
 {% endhighlight %}
       </div>
+        <div class="eight wide right floated column">
+          <h3 class="ui header">Use fetch and promises for network access</h3>
+          <p>No need to use <code>XMLHttpRequest</code>. Quickly provides a polyfill for the fetch API and ES6 Promises, which makes network access a breeze.</p>
+        </div>
     </div>
     <div class="row">
       <div class="center aligned column">
@@ -115,7 +149,11 @@ fetch('https://api.github.com/repos/iBeliever/quickly')
 <div class="ui vertical stripe segment">
   <div class="ui middle aligned stackable grid container">
     <div class="row">
-      <div class="seven wide column">
+      <div class="eight wide column">
+        <h3 class="ui header">Use many of the 250,000+ npm packages</h3>
+        <p>Many of the packages available via npm work with Quickly. And if they don't, submit a bug and we can ship a patch with Quickly so the module works for you and everyone else.</p>
+      </div>
+      <div class="seven wide right floated column">
 {% highlight js %}
 import _ from 'lodash'
 
@@ -124,11 +162,6 @@ _.assign({ 'a': 1 }, { 'b': 2 }, { 'c': 3 });
 _.map([1, 2, 3], function(n) { return n * 3; });
 // → [3, 6, 9]
 {% endhighlight %}
-      </div>
-
-      <div class="eight wide right floated column">
-        <h3 class="ui header">Use many of the 250,000+ npm packages</h3>
-        <p>Many of the packages available via npm work with Quickly. And if they don't, submit a bug and we can ship a patch with Quickly so the module works for you and everyone else.</p>
       </div>
     </div>
   </div>
