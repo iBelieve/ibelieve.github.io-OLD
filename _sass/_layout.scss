@@ -23,6 +23,10 @@
   display: none;
 }
 
+.ui.fixed.menu .toc.item {
+  display: none;
+}
+
 .ui.footer.segment {
   margin: 5em 0em 0em;
   padding: 2em 0em;
@@ -62,9 +66,23 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .ui.fixed.menu {
+  .ui.fixed.hidden.menu {
     display: none !important;
   }
+
+  .ui.fixed.menu .item,
+  .ui.fixed.menu .menu {
+    display: none !important;
+  }
+
+  .ui.fixed.menu .toc.item {
+    display: block !important;
+  }
+
+  .ui.fixed.menu .toc.item {
+    display: block !important;
+  }
+
   .secondary.pointing.menu .item,
   .secondary.pointing.menu .menu {
     display: none;
