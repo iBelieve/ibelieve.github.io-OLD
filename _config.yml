@@ -9,12 +9,10 @@
 title: Michael Spencer
 email: sonrisesoftware@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  I'm an iOS, Android, Qt, and web developer. In my spare time I lead the development of Papyros, a Linux- and Qt-based OS using Material Design and other modern features. I also work on various Qt apps and projects.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://ibeliever.github.io" # the base hostname & protocol for your site
-twitter_username: iBelieve316
+twitter_username: iBeliever316
 github_username:  iBeliever
 
 # Build settings
