@@ -23,7 +23,7 @@ It's possible to assign a reference to an HTML element using the [`ref` attribut
 
 So, we can get a reference to the `RouterView` view model in our `app.html` file like this:
 
-{% highlight js %}
+{% highlight html %}
 <router-view view-model.ref="routerViewModel"></router-view>
 {% endhighlight %}
 
@@ -68,7 +68,7 @@ export class MyPage {
 
 Now, we can use `routeActions` in our `app.html`, either for directly displaying actions or for binding them to a navbar component to display there. In my case, I'm displaying the actions as buttons in my Bootstrap navbar like this:
 
-{% highlight js %}
+{% highlight html %}
 <button repeat.for="action of actions"
         class="btn btn-${action.role || 'default'} navbar-btn"
         click.delegate="action.triggered()"
