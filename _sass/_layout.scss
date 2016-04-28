@@ -116,3 +116,14 @@
         margin-bottom: 32px;
     }
 }
+
+.post {
+  .header {
+    margin-bottom: 4px;
+  }
+  .attributes {
+    font-size: 80%;
+    color: $subtext-color;
+    margin-bottom: 24px;
+  }
+}

@@ -7,7 +7,7 @@ layout: home
 
   <div class="ui divided link items">
     {% for post in site.posts %}
-    <div class="item">
+    <a class="item" href="{{ post.url }}">
       <div class="content">
         <div class="header">{{ post.title }}</div>
         <div class="meta">
@@ -20,10 +20,10 @@ layout: home
         </div>
         <div class="extra">
           <i class="comment icon"></i>
-          20 comments
+          <span class="disqus-comment-count" data-disqus-url="{{ post.url }}">Loading comments...</span>
         </div>
       </div>
-    </div>
+    </a>
     {% endfor %}
   </div>
 
