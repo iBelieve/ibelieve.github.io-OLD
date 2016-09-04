@@ -1,28 +1,23 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
+---
 title: Michael Spencer
+timezone: UTC
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
 email: sonrisesoftware@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
+description: |
   I'm an iOS, Android, Qt, and web developer. In my spare time I lead the development of Papyros, a Linux- and Qt-based OS using Material Design and other modern features. I also work on various Qt apps and projects.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://ibeliever.github.io" # the base hostname & protocol for your site
+baseurl: ''
+url: http://ibeliever.github.io
 twitter_username: iBeliever316
-github_username:  iBeliever
-
-permalink: /:year/:month/:title
-
-# Build settings
+github_username: iBeliever
+permalink: "/:year/:month/:title"
 markdown: kramdown
-
-# Octopress config
 post_ext: md
-
 kramdown:
   input: GFM
   syntax_highlighter: rouge
